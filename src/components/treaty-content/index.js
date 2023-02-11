@@ -1,0 +1,1 @@
+export { TreatyContent } from './treaty-content';

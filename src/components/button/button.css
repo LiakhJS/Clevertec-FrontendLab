@@ -1,0 +1,61 @@
+.reserv-btn {
+  height: 40px;
+  width: 166px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 19px 0 8px 0;
+}
+
+.btn-wrapper.inColumn {
+  padding: 0;
+}
+
+.reserv-btn.ordered {
+  background: #F9F9FA;
+  border: 1px solid #BFC4C9;
+  color: #A7A7A7;
+}
+
+.reserv-btn.reserved {
+  background: #FFFFFF;
+  border: 1px solid #BFC4C9;
+  color: #363636;
+}
+
+@media only all and (max-width: 640px) {
+  .btn-wrapper.inColumn.mobile .reserv-btn {
+    width: 186px;
+  }
+
+  .btn-wrapper.inColumn.mobile {
+    padding: 0;
+  }
+}
+
+@media only all and (max-width: 480px) {
+  .btn-wrapper.mobile {
+    padding: 10px 0 8px 0;
+  }
+  .btn-wrapper.inColumn.mobile  {
+  width:100%;}
+  .btn-wrapper.mobile .reserv-btn {
+    width: 100%;
+  }
+}

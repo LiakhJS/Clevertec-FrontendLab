@@ -1,0 +1,73 @@
+.card-list {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  padding-top: 32px;
+  column-gap: 16px;
+  row-gap: 24px;
+  width: 100%;
+  flex-wrap: wrap;
+  order: 0;
+  flex-grow: 0;
+  flex: none;
+}
+
+.card-list.inColumn,
+.card-list.inColumn.mobile {
+  flex-direction: column;
+  row-gap: 16px;
+}
+
+.card_name.inColumn,
+.card_author.inColumn {
+  margin-left: 136px;
+}
+
+@media only all and (max-width: 1280px) {
+  .card-list.mobile {
+    row-gap: 32px;
+    column-gap: 34.5px;
+    padding-top: 24px;
+  }
+}
+@media only all and (max-width: 865px) {
+  .card-list.mobile {
+    row-gap: 0px;
+    column-gap: 32px;
+    justify-content: space-between;
+  }
+}
+
+@media only all and (max-width: 780px) {
+  .card-list.mobile {
+    row-gap: 20px;
+    column-gap: 32px;
+    justify-content: flex-start;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .card-list.mobile {
+    padding-top: 16px;
+    justify-content: space-around;
+  }
+}
+
+@media only all and (max-width: 568px) {
+  .card-list.mobile {
+    column-gap: 0;
+  }
+}
+
+@media only all and (max-width: 475px) {
+  .card-list.mobile {
+    justify-content: space-between;
+  }
+}
+
+@media only all and (max-width: 450px) {
+  .card.mobile {
+    width: 100%;
+  }
+}

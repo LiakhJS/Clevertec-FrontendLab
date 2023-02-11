@@ -1,0 +1,79 @@
+ol {
+  list-style: none;
+  counter-reset: li;
+}
+
+ol li:before {
+  counter-increment: li;
+  content: counters(li, '.') '. ';
+  color: #363636;
+}
+
+h3.terms__title,
+h3.treaty__title {
+  padding-bottom: 32px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.1px;
+}
+
+li.terms__descr_paragraf,
+li.treaty__descr_paragraf {
+  margin-top: 16px;
+}
+
+li.terms__descr_main,
+li.terms__descr_paragraf,
+li.treaty__descr_main,
+li.treaty__descr_paragraf {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+}
+
+.terms__descr,
+.treaty__descr {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+li.terms__descr_paragraf,
+li.terms__descr_main > ol,
+li.treaty__descr_paragraf,
+li.treaty__descr_main > ol {
+  font-weight: 400;
+}
+
+li.terms__descr_main,
+li.treaty__descr_main {
+  padding-left: 0px;
+}
+
+ol {
+  padding-left: 30px;
+}
+
+.terms__descr_main:not(:first-child),
+.treaty__descr_main:not(:first-child) {
+  margin-top: 32px;
+}
+
+@media only all and (max-width: 640px) {
+  h3.terms__title,
+  h3.treaty__title {
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 24px;
+  }
+
+  li.terms__descr_paragraf,
+  li.treaty__descr_paragraf {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

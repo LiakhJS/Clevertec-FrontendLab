@@ -1,0 +1,10 @@
+.book-page {
+  min-height: 100vh;
+  flex-direction: column;
+
+  display: flex;
+  justify-content: space-between;
+}
+.book-page .nav-menu {
+  display: none;
+}

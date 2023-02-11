@@ -1,0 +1,269 @@
+.card {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  height: 470px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18),
+    0px 1px 5px rgba(191, 196, 201, 0.24);
+  border-radius: 10px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.card_cover > img {
+  width: 174px;
+  height: 242px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.card_name {
+  display: flex;
+  flex-direction: column;
+  height: 54px;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+}
+
+.card_author {
+  display: flex;
+  height: 36px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+  align-items: flex-end;
+  color: #727272;
+}
+
+.card_stars {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 0 16px 0;
+  gap: 6px;
+  height: 24px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+  color: #a7a7a7;
+}
+
+.card.inColumn {
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 24px 16px 16px;
+  height: auto;
+  min-height: 202px;
+}
+
+.card_cover.inColumn {
+  position: absolute;
+  padding-right: 16px;
+}
+
+.card_cover.inColumn > img {
+  width: 120px;
+  height: 170px;
+}
+
+.card__rate-and-btn.none,
+.card_stars.none {
+  display: none;
+}
+
+.card__rate-and-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 136px;
+  padding: 28px 0 0px 0;
+}
+
+.card_stars.inColumn {
+  margin: 0 0 0 0;
+}
+
+.card_name.inColumn,
+.card_name.inColumn.mobile {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.1px;
+  color: #363636;
+  justify-content: flex-start;
+  height: auto;
+}
+
+.card_author.inColumn,
+.card_author.inColumn.mobile {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1px;
+  color: #727272;
+  padding-top: 8px;
+  text-transform: none;
+}
+
+@media only all and (max-width: 1280px) {
+  .card.inColumn.mobile {
+    border-radius: 12px;
+  }
+
+  .card_cover.inColumn > img {
+    height: 172px;
+  }
+
+  .card__rate-and-btn.mobile {
+    padding: 16px 0 0px 0;
+  }
+
+  .card_name.mobile {
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .card_author.mobile {
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .card_stars.mobile {
+    margin: 0px 0 25px 0;
+  }
+
+  .card_cover.mobile > img {
+    margin: 0 auto;
+  }
+
+  .card_stars.mobile {
+    margin: 16px 0;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .card__rate-and-btn.mobile {
+    flex-direction: column;
+    margin-left: 78px;
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .card_cover.inColumn.mobile > img {
+    width: 70px;
+    height: 100px;
+  }
+
+  .card.inColumn.mobile {
+    padding: 16px 16px 16px 8px;
+    min-height: 150px;
+  }
+
+  .card_name.inColumn.mobile {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    height: auto;
+    margin-left: 78px;
+    min-height: auto;
+  }
+
+  .card_author.inColumn.mobile {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 0px;
+    height: auto;
+    margin-left: 78px;
+    padding: 3px 0;
+  }
+
+  .card_stars.inColumn.mobile {
+    margin: 0 0 16px 0;
+  }
+}
+
+@media only all and (max-width: 480px) {
+  .card_cover.mobile > img {
+    margin: 0 auto;
+  }
+
+  .card_stars.mobile {
+    margin: 16px 0;
+  }
+
+  .card_name.mobile {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    height: 54px;
+  }
+
+  .card_author.mobile {
+    font-weight: 400;
+    text-transform: none;
+    height: 36px;
+    margin-top: 8px;
+    align-items: flex-start;
+  }
+
+  .card.mobile {
+    padding: 8px 16px;
+  }
+
+  .card__rate-and-btn.mobile {
+    flex-direction: column;
+    margin-left: 78px;
+    align-items: flex-start;
+    padding-top: 0;
+  }
+
+  .card_cover.inColumn.mobile > img {
+    width: 70px;
+    height: 100px;
+  }
+
+  .card.inColumn.mobile {
+    padding: 16px 16px 16px 8px;
+    min-height: 150px;
+  }
+
+  .card_name.inColumn.mobile {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    height: auto;
+    margin-left: 78px;
+    min-height: auto;
+  }
+
+  .card_author.inColumn.mobile {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 0px;
+    height: auto;
+    margin: 0 0 0 78px;
+    padding: 3px 0;
+  }
+
+  .card_stars.inColumn.mobile {
+    margin: 0 0 16px 0;
+  }
+}

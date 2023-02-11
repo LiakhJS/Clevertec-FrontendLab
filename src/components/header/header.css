@@ -1,0 +1,234 @@
+header {
+  display: flex;
+}
+
+.header__main {
+  display: flex;
+  position: relative;
+  align-items: center;
+  line-height: 40px;
+  height: 58px;
+}
+
+.header__main_logo.mobile {
+  display: none;
+}
+
+.header__main_logo {
+  width: 40px;
+  height: 40px;
+}
+
+.header__person {
+  display: flex;
+  position: relative;
+  line-height: 58px;
+  height: 58px;
+}
+
+.header__main_name {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.header__title {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  height: 58px;
+  align-items: center;
+  display: flex;
+  letter-spacing: 0.1px;
+  color: #363636;
+}
+
+.header__title {
+  position: absolute;
+  left: 285px;
+}
+
+.header__person {
+  position: absolute;
+  right: 0px;
+}
+
+.header__person_name {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 16px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.book-page header.mobile.active-book {
+  padding: 0 165px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.book-page header.mobile.active-book .header__person {
+  right: 165px;
+}
+
+.book-page header.mobile.active-book .header__title {
+  position: absolute;
+  padding-left: 120px;
+}
+
+label.hamburger {
+  background: #fff;
+  width: 32px;
+  /* less width = square hamburger */
+  height: 32px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+input#hamburger {
+  display: none;
+}
+
+.line {
+  position: absolute;
+  height: 2.67px;
+  width: 26.67px;
+  background: #363636;
+  transition: 0.5s;
+}
+
+.line:nth-child(1) {
+  top: 6.67px;
+}
+
+.line:nth-child(2) {
+  top: 14.67px;
+}
+
+.line:nth-child(3) {
+  top: 22.67px;
+}
+
+.hamburger.visible > .line:nth-child(1) {
+  transform: translateY(8px) rotate(-45deg);
+  width: 18.67px;
+  background: #f83600;
+}
+
+.hamburger.visible > .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.visible > .line:nth-child(3) {
+  transform: translateY(-8px) rotate(45deg);
+  width: 18.67px;
+  background: #f83600;
+}
+
+@media only all and (max-width: 1280px) {
+  .header__main_logo,
+  .header__person.mobile,
+  .header__main_name.mobile {
+    display: none;
+  }
+
+  .header__main .header__main_logo.mobile {
+    display: flex;
+    width: 32px;
+    height: 32px;
+  }
+
+  .header__main {
+    height: 40px;
+  }
+
+  .header__main.mobile {
+    align-items: center;
+  }
+
+  header {
+    padding: 32px 0 22px 0;
+  }
+
+  .book-page header.mobile.active-book {
+    padding: 32px 64px 22px 64px;
+  }
+
+  .header__title.mobile,
+  .book-page header.mobile.active-book .header__title {
+    position: static;
+    padding-left: 24px;
+    height: 40px;
+  }
+}
+
+@media only all and (max-width: 568px) {
+  .card-list.mobile {
+    padding-top: 16px;
+  }
+
+  header {
+    padding: 24px 0;
+  }
+
+  .header__main .header__main_logo.mobile {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__title.mobile {
+    font-size: 18px;
+    line-height: 28px;
+    align-items: center;
+    display: flex;
+  }
+
+  /* header, */
+  .book-page header.mobile.active-book {
+    padding: 24px 16px;
+  }
+
+  .header__title.mobile,
+  .book-page header.mobile.active-book .header__title,
+  .header__main {
+    height: 28px;
+  }
+
+  label.hamburger {
+    width: 24px;
+    height: 24px;
+  }
+
+  .line {
+    height: 2px;
+    width: 20px;
+  }
+
+  .line:nth-child(1) {
+    top: 5px;
+  }
+
+  .line:nth-child(2) {
+    top: 11px;
+  }
+
+  .line:nth-child(3) {
+    top: 17px;
+  }
+
+  .hamburger.visible .line:nth-child(1) {
+    transform: translateY(6px) rotate(-45deg);
+    width: 14px;
+  }
+
+  .hamburger.visible .line:nth-child(3) {
+    transform: translateY(-6px) rotate(45deg);
+    width: 14px;
+  }
+}

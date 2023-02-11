@@ -1,0 +1,28 @@
+.card_stars > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card_stars > svg path {
+  stroke: #ffbc1f;
+  color: #ffbc1f;
+}
+
+.empty-star path {
+  stroke: #ffbc1f;
+  color: #ffbc1f;
+  fill: #ffffff;
+}
+
+.book__card_rating_inline.empty-stars .card_stars > svg path {
+  stroke: #ffbc1f;
+  color: #ffbc1f;
+  fill: #ffffff;
+}
+
+@media only all and (max-width: 640px) {
+  .card_stars.inColumn > svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,38 @@
+.comment__user {
+  display: flex;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  row-gap: 42px;
+}
+
+.comment__stars .card_stars {
+  margin: 18px 0 0 0;
+}
+
+.comment__user {
+  display: flex;
+  column-gap: 24px;
+}
+
+.comment__user_name,
+.comment__user_date {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1px;
+  color: #727272;
+}
+
+.comment__text {
+  margin-top: 19px;
+}
+
+.comment__text.none {
+  display: none;
+}

@@ -1,0 +1,1 @@
+export { ThePublicOffer } from './the-public-offer';

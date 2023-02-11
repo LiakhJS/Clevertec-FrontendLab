@@ -1,0 +1,25 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 62px 0;
+  width: 100%;
+  margin-left: 6px;
+}
+
+@media only all and (max-width: 1280px) {
+  .content.mobile {
+    margin-left: 0;
+    padding-top: 32px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .content.mobile {
+    padding-top: 8px;
+  }
+
+  .content.terms,
+  .content.treaty {
+    padding: 24px 0;
+  }
+}
