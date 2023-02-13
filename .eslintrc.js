@@ -1,10 +1,10 @@
 module.exports = {
     extends: [require.resolve('arui-presets-lint/eslint'), 'plugin:react/jsx-runtime'],
     parserOptions: {
-        project: ['./tsconfig.eslint.json', './cypress/tsconfig.json' ],
+        project: ['./tsconfig.eslint.json', './cypress/tsconfig.json'],
         tsconfigRootDir: __dirname,
         sourceType: 'module',
-    
+
     },
 
     overrides: [
@@ -18,21 +18,22 @@ module.exports = {
     rules: {
         'import/no-extraneous-dependencies': [
             'error',
-            
+
 
             {
                 // TODO: добавить после cypess 'cypress/**/*.ts',  
-                devDependencies: ['**/*.test.{ts,tsx,js,jsx}'],
-                
+                devDependencies: ['**/*.test.{,js,jsx}'],
+ 
             },
         ],
+        'react-hooks/exhaustive-deps': 'warn',
         'no-param-reassign': ['error', { 'props': false }],
         'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
         'import/no-default-export': 'error',
         indent: 'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
-        '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^action' }],
+        // '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^action' }],
         'no-nested-ternary': 'off',
         'no-unneeded-ternary': 'off'
-    },
+    }, 
     ignorePatterns: ['coverage', 'cypress.config.ts'],
 };
