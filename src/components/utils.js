@@ -6,6 +6,11 @@ import cover4 from '../images/cover_4.png';
 import cover5 from '../images/cover_5.png';
 
 
+export const host = 'https://strapi.cleverland.by';
+export const apiBooks = `${host}/api/books`;
+export const apiCategories = `${host}/api/categories`;
+
+
 export const genres = [
     { id: 1, genre: 'Бизнес-книги', count: '14', genreRoute: 'business' },
     { id: 2, genre: 'Детективы', count: '8', genreRoute: 'detective' },

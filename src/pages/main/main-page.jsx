@@ -1,8 +1,16 @@
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
+import { Error } from '../../components/error';
+// import axios from 'axios';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
+import { Loader } from '../../components/loader';
 import { MainContainer } from '../../components/main-container';
+import { getBooksThunk } from '../../redux/books';
+// import { fetchUserById } from '../../redux/books';
+// import { store } from '../../redux';
+// import { setAllBooks } from '../../redux/books';
 import { changeBurgerState } from '../../redux/reducer';
 
 import './main-page.css';
@@ -23,11 +31,69 @@ export const MainPage = () => {
     }
   });
 
+  // const getCategories = store.getState().category;
+  // const categories = useSelector((state) => getCategories(state).categories);
+  // const booksData = useSelector((state) => state.books);
+  const booksStatusLoading = useSelector((state) => state.books.status);
+
+  useEffect(
+    () => () => {
+      dispatch(getBooksThunk());
+    },
+
+    // dispatch(getCategoriesThunk());
+    [dispatch]
+  );
+
   return (
     <section className='main-page mobile'>
-      <Header />
-      <MainContainer />
-      <Footer />
+      {booksStatusLoading === 'loading' && <Loader/>}
+      {booksStatusLoading === 'failed' && <Error />}
+      {booksStatusLoading === 'resolved' && (
+        <React.Fragment>
+               <Header  />
+          {/* <Header books={booksData.books} /> */}
+          <MainContainer />
+          <Footer />
+        </React.Fragment>
+      )}
     </section>
   );
 };
+
+// const thunkFunction = (dispatch) => {
+//   axios
+//     .get('https://strapi.cleverland.by/api/books')
+//     .then((response) => {
+//       dispatch(setAllBooks(response));
+//     })
+//     .catch((error) => document.write(error));
+// };
+
+// useEffect(
+//   () => () => {
+//     store.dispatch(thunkFunction);
+//   },
+//   []
+// );
+
+// const [games, setGames] = useState([]);
+// useEffect(() => {
+//   axios
+//     .get('https://strapi.cleverland.by/api/books')
+//     .then((response) => setGames(response))
+//     .catch((error) => `There is the ${error}`);
+// }, []);
+
+// const functionS = () => {
+//   const boks = store.getState().books.allBooks;
+//   console.log(boks.data[1].image.url);
+// };
+
+// if (!booksStatusLoading || booksStatusLoading === 'failed') {
+//     return <Error />
+// }
+
+// if (booksStatusLoading === 'loading') {
+//     return <Loader />
+// }

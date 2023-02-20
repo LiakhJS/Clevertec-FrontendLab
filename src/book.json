@@ -10,7 +10,7 @@
     "categories": ["Бизнес"],
     "id": 2,
     "booking": null,
-    "delivery": null,
+    "delivery": true,
     "histories": null
   },
   {
