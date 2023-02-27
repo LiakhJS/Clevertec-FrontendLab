@@ -1,19 +1,29 @@
-import { useState } from 'react';
+// import { useState } from 'react';
+import { useDispatch,useSelector  } from 'react-redux';
 import classNames from 'classnames';
 
 import { ReactComponent as Tiles } from '../../images/active_block.svg';
 import { ReactComponent as List } from '../../images/active_list.svg';
 import { ReactComponent as Cross } from '../../images/cross.svg';
+import { setInputValue , setIsSearchOpened , setSortByDesc } from '../../redux/books';
 
 import './nav-list.css';
 
 export const NavList = ({ isFormOfTiles, isFormOfList, setisFormOfList, setIsFormOfTiles }) => {
-  const [isSearchOpened, setIsSearchOpened] = useState(false);
+  // const [isSearchOpened, setIsSearchOpened] = useState(false);
+  // const openSearch = () => {
+  //   setIsSearchOpened(true);
+  // };
+  // const closeSearch = () => {
+  //   setIsSearchOpened(false);
+  // };
+  const isSearchOpened = useSelector((state) => state.books.isSearchOpened);
+  const dispatch = useDispatch();
   const openSearch = () => {
-    setIsSearchOpened(true);
+    dispatch(setIsSearchOpened(true));
   };
   const closeSearch = () => {
-    setIsSearchOpened(false);
+    dispatch(setIsSearchOpened(false));
   };
 
   const checkFormOfTiles = () => {
@@ -23,6 +33,18 @@ export const NavList = ({ isFormOfTiles, isFormOfList, setisFormOfList, setIsFor
   const checkFormOfList = () => {
     setisFormOfList(!isFormOfList);
     setIsFormOfTiles(!isFormOfTiles);
+  };
+  
+  
+
+  const inputValue = useSelector((state) => state.books.inputValue);
+  const setInputValueFunction = (e) => {
+    dispatch(setInputValue(e.target.value));
+  };
+  
+  const isSortByDesc = useSelector((state) => state.books.isSortByDesc);
+  const toggleSortByDesc =  () => {
+    dispatch(setSortByDesc(!isSortByDesc));
   };
 
   return (
@@ -42,6 +64,8 @@ export const NavList = ({ isFormOfTiles, isFormOfList, setisFormOfList, setIsFor
           placeholder='Поиск книги или автора'
           className={classNames('nav-list__search mobile', { searchIsOpened: isSearchOpened })}
           onClick={openSearch}
+          onChange={setInputValueFunction}
+          value={inputValue}
           id='search'
           name='search'
         />
@@ -49,6 +73,7 @@ export const NavList = ({ isFormOfTiles, isFormOfList, setisFormOfList, setIsFor
         <input
           type='button'
           value='По рейтингу'
+          onClick={toggleSortByDesc}
           className={classNames('nav-list__filter mobile', { searchIsOpened: isSearchOpened })}
           name='filter'
         />

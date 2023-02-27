@@ -14,13 +14,42 @@ export const getBooksThunk = createAsyncThunk(
 
 const initialState = {
   books: [],
+  booksByCategory:[],
+  filteredBooks:[],
+  inputValue:'',
+  isSortByDesc:false,
+  isSearchOpened:false,
   status: 'idle'
 }
 
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    filterCatalogByCategory: (state, action) => {
+      if (action.payload === 'Все книги') {
+        state.booksByCategory = state.books;
+      } else {
+        state.booksByCategory = state.books.filter((element) => element.categories.includes(action.payload));
+      }
+    },
+    setInputValue: (state, action) => {
+      state.inputValue = action.payload;
+    },
+    setSortByDesc: (state, action) => {
+      state.isSortByDesc = action.payload;
+    },
+    setIsSearchOpened: (state, action) => {
+      state.isSearchOpened = action.payload;
+    },
+    
+    
+    
+    
+   
+    
+    
+  },
   extraReducers: (builder) => {
       builder.addCase(getBooksThunk.pending, (state) => {
           state.status = 'loading';
@@ -37,6 +66,6 @@ const booksSlice = createSlice({
 });
 
 export { booksSlice };
-export const { setAllBooks } = booksSlice.actions;
+export const {  filterCatalogByCategory, setInputValue, setSortByDesc, setIsSearchOpened } = booksSlice.actions;
 
 

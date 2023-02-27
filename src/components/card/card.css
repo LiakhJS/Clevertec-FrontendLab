@@ -21,16 +21,17 @@
 }
 
 .card_name {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   height: 54px;
-  justify-content: center;
+  /* justify-content: center; */
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 0.1px;
 }
+
 
 .card_author {
   display: flex;

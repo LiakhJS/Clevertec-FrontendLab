@@ -1,9 +1,10 @@
 // import covempty from '../images/avatar.png'
+import cover5 from '../images/cat.png';
 import cover1 from '../images/cover_1.png';
 import cover2 from '../images/cover_2.png';
 import cover3 from '../images/cover_3.png';
 import cover4 from '../images/cover_4.png';
-import cover5 from '../images/cover_5.png';
+
 
 
 export const host = 'https://strapi.cleverland.by';
@@ -52,7 +53,7 @@ export const cards = [
     {
         id: 2,
         cover: `${cover1}`,
-        covers: [`${cover1}`],
+        covers: [`${cover1}`, `${cover2}`, `${cover3}`, `${cover4}`, `${cover5}`],
         title: 'Грокаем алгоритмы. Иллюстрированное.',
         author: 'Адитья Бхаргава, 2019',
         reservedDate: 'забронировать',

@@ -459,15 +459,14 @@ h5 {
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   left: 40%;
 }
-
 @media only all and (max-width: 1280px) {
-  .mySwiper.swiper2 {
+  /* .mySwiper.swiper2 {
     display: grid;
   }
 
   .mySwiper.swiper1 {
     display: none;
-  }
+  } */
 
   .book-page {
     padding: 0;
@@ -724,6 +723,10 @@ h5 {
     width: 209px;
     border-bottom: 1px solid #f9f9fa;
   }
+  .book__breadcrumbs {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 
   .book__card_rating > h5,
   .book__card_comments_title > h5 {
@@ -933,6 +936,7 @@ h5 {
     height: 260px;
   }
 }
+
 
 @media only all and (max-width: 568px) {
   .book-page {

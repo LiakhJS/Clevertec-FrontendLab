@@ -27,7 +27,7 @@
     align-items: center;
 }
 
-.content svg {
+.content-error svg {
     width: 32px;
     height: 32px;
     flex-shrink: 0;
@@ -49,7 +49,7 @@
         line-height: 18px;
         padding: 24px 16px;
     }
-    .content svg {
+    .content-error svg {
         width: 24px;
         height: 24px;
         margin-right: 12px;

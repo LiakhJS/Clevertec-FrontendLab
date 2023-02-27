@@ -1,0 +1,22 @@
+.main-page__no-cards {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4rem;
+  text-align: center;
+  margin: 200px auto;
+  color: #a7a7a7;
+}
+
+@media only all and (max-width: 1280px) {
+  .main-page__no-cards {
+    margin-top: 226px;
+  }
+}
+@media only all and (max-width: 640px) {
+  .main-page__no-cards {
+    margin-top: 134px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 2.8rem;
+  }
+}

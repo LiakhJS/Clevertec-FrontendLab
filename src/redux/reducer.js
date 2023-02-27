@@ -12,7 +12,8 @@ const burgerSlice = createSlice({
     isActiveTermsLink: false,
     isActiveGenre: true,
     isNotActiveShowCase: false,
-    isHiddenGenres: false
+    isHiddenGenres: false,
+    activeCategory: 'all',
   },
   reducers: {
     changeBurgerState(state, action) {
@@ -38,11 +39,14 @@ const burgerSlice = createSlice({
     },
     setIsHiddenGenres(state, action) {
       state.isHiddenGenres = action.payload;
-    }
+    },
+    setActiveCategory(state, action) {
+      state.activeCategory = action.payload;
+    },
   }
 })
 
 export { burgerSlice };
-export const { changeBurgerState, changeCommentsVisibility, setIsActiveGenre, setIsActiveShowcase, setIsActiveTermsLink, setIsActiveTreatyLink, setIsHiddenGenres, rotateArrow } = burgerSlice.actions;
+export const { changeBurgerState, changeCommentsVisibility, setIsActiveGenre, setIsActiveShowcase, setIsActiveTermsLink, setIsActiveTreatyLink, setIsHiddenGenres, rotateArrow, setActiveCategory } = burgerSlice.actions;
 
 

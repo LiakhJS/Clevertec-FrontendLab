@@ -5,7 +5,7 @@ import { NavList } from '../nav-list';
 
 import './content.css';
 
-export const Content = () => {
+export const Content = ({ categories}) => {
   const [isFormOfList, setisFormOfList] = useState(false);
   const [isFormOfTiles, setIsFormOfTiles] = useState(true);
 
@@ -17,7 +17,8 @@ export const Content = () => {
         isFormOfTiles={isFormOfTiles}
         setIsFormOfTiles={setIsFormOfTiles}
       />
-      <CardList isFormOfList={isFormOfList} isFormOfTiles={isFormOfTiles} />
+      {/* <CardList books={books} isFormOfList={isFormOfList} isFormOfTiles={isFormOfTiles} categories={categories}/> */}
+      <CardList isFormOfList={isFormOfList} isFormOfTiles={isFormOfTiles} categories={categories}/>
     </div>
   );
 };

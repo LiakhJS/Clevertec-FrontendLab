@@ -8,10 +8,11 @@ import { Header } from '../../components/header';
 import { Loader } from '../../components/loader';
 import { MainContainer } from '../../components/main-container';
 import { getBooksThunk } from '../../redux/books';
+import { getCategoriesThunk } from '../../redux/categories';
 // import { fetchUserById } from '../../redux/books';
 // import { store } from '../../redux';
 // import { setAllBooks } from '../../redux/books';
-import { changeBurgerState } from '../../redux/reducer';
+import { changeBurgerState, rotateArrow, setIsHiddenGenres } from '../../redux/reducer';
 
 import './main-page.css';
 
@@ -33,17 +34,23 @@ export const MainPage = () => {
 
   // const getCategories = store.getState().category;
   // const categories = useSelector((state) => getCategories(state).categories);
-  // const booksData = useSelector((state) => state.books);
+  const booksData = useSelector((state) => state.books.books);
+  const categoriesData = useSelector((state) => state.categories);
   const booksStatusLoading = useSelector((state) => state.books.status);
 
   useEffect(
-    () => () => {
+ () => {
       dispatch(getBooksThunk());
+      dispatch(getCategoriesThunk());
+      dispatch(setIsHiddenGenres(false));
+      dispatch(rotateArrow(false));
     },
 
     // dispatch(getCategoriesThunk());
     [dispatch]
   );
+  
+  
 
   return (
     <section className='main-page mobile'>
@@ -53,7 +60,8 @@ export const MainPage = () => {
         <React.Fragment>
                <Header  />
           {/* <Header books={booksData.books} /> */}
-          <MainContainer />
+          {/* <MainContainer books={booksData.books} categories={categoriesData} /> */}
+          <MainContainer  books={booksData} categories={categoriesData} />
           <Footer />
         </React.Fragment>
       )}
