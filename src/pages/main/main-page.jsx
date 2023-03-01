@@ -1,73 +1,75 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import React, { useEffect } from 'react';
+// import { useDispatch, useSelector } from 'react-redux';
 
-import { Error } from '../../components/error';
-// import axios from 'axios';
-import { Footer } from '../../components/footer';
-import { Header } from '../../components/header';
-import { Loader } from '../../components/loader';
-import { MainContainer } from '../../components/main-container';
-import { getBooksThunk } from '../../redux/books';
-import { getCategoriesThunk } from '../../redux/categories';
-// import { fetchUserById } from '../../redux/books';
-// import { store } from '../../redux';
-// import { setAllBooks } from '../../redux/books';
-import { changeBurgerState, rotateArrow, setIsHiddenGenres } from '../../redux/reducer';
+// import { Error } from '../../components/error';
 
+// import { Footer } from '../../components/footer';
+// import { Header } from '../../components/header';
+// import { Loader } from '../../components/loader';
+// import { MainContainer } from '../../components/main-container';
+import { Registration } from '../../components/registration';
+
+// import { getBooksThunk } from '../../redux/books';
+// import { getCategoriesThunk } from '../../redux/categories';
+// import { changeBurgerState, rotateArrow, setIsHiddenGenres } from '../../redux/reducer';
 import './main-page.css';
 
-export const MainPage = () => {
-  const dispatch = useDispatch();
-  const hamburger = document.querySelector('.header__main_logo');
-  const menu = document.querySelector('.nav-menu');
+export const MainPage = () => (
+// {
+//   const dispatch = useDispatch();
+//   const hamburger = document.querySelector('.header__main_logo');
+//   const menu = document.querySelector('.nav-menu');
 
-  document.addEventListener('click', (event) => {
-    if (
-      !document.querySelector('.nav-menu').contains(event.target) &&
-      !(event.target === hamburger) &&
-      document.querySelector('.nav-menu').classList.contains('visible') &&
-      !(event.target === menu)
-    ) {
-      dispatch(changeBurgerState(false));
-    }
-  });
+//   document.addEventListener('click', (event) => {
+//     if (
+//       !document.querySelector('.nav-menu').contains(event.target) &&
+//       !(event.target === hamburger) &&
+//       document.querySelector('.nav-menu').classList.contains('visible') &&
+//       !(event.target === menu)
+//     ) {
+//       dispatch(changeBurgerState(false));
+//     }
+//   });
 
-  // const getCategories = store.getState().category;
-  // const categories = useSelector((state) => getCategories(state).categories);
-  const booksData = useSelector((state) => state.books.books);
-  const categoriesData = useSelector((state) => state.categories);
-  const booksStatusLoading = useSelector((state) => state.books.status);
 
-  useEffect(
- () => {
-      dispatch(getBooksThunk());
-      dispatch(getCategoriesThunk());
-      dispatch(setIsHiddenGenres(false));
-      dispatch(rotateArrow(false));
-    },
+//   const booksData = useSelector((state) => state.books.books);
+//   const categoriesData = useSelector((state) => state.categories);
+//   const booksStatusLoading = useSelector((state) => state.books.status);
 
-    // dispatch(getCategoriesThunk());
-    [dispatch]
-  );
+//   useEffect(
+//  () => {
+//       dispatch(getBooksThunk());
+//       dispatch(getCategoriesThunk());
+//       dispatch(setIsHiddenGenres(false));
+//       dispatch(rotateArrow(false));
+//     },
+//     [dispatch]
+//   );
   
   
 
-  return (
+  // return (
     <section className='main-page mobile'>
-      {booksStatusLoading === 'loading' && <Loader/>}
+      {/* {booksStatusLoading === 'loading' && <Loader/>}
       {booksStatusLoading === 'failed' && <Error />}
       {booksStatusLoading === 'resolved' && (
         <React.Fragment>
+
                <Header  />
-          {/* <Header books={booksData.books} /> */}
-          {/* <MainContainer books={booksData.books} categories={categoriesData} /> */}
           <MainContainer  books={booksData} categories={categoriesData} />
           <Footer />
         </React.Fragment>
-      )}
+      )} */}
+              <Registration />
     </section>
   );
-};
+// };
+
+
+
+
+
+
 
 // const thunkFunction = (dispatch) => {
 //   axios

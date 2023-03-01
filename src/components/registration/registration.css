@@ -1,0 +1,140 @@
+.container {
+  position: fixed;
+  z-index: 8;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 48px 56px;
+  gap: 32px;
+  width: 528px;
+  height: 492px;
+  background: #ffffff;
+  border-radius: 16px;
+}
+
+.cleverland-title {
+  position: absolute;
+  top: 180px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 0.1px;
+  color: #ffffff;
+}
+.custom-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.1pxж;
+}
+
+.custom-step {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+}
+.custom-input {
+  width: 100%;
+  height: 40px;
+
+  padding: 26px 12px 12px 12px;
+}
+
+.custom-label {
+  position: absolute;
+  left: 12px;
+  top: 19px;
+  transition: 0.3s;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.1px;
+}
+.custom-item {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  width: 416px;
+}
+
+.custom-input:focus ~ .custom-label,
+.custom-input:not(:focus):valid ~ .custom-label {
+  top: 0px;
+  font-size: 10px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #a7a7a7;
+  padding: 6px 0 4px 0;
+}
+
+.custom-item > input:focus-visible {
+  outline: none;
+}
+
+.custom-item > input {
+  background: #f9f9fa;
+  border-radius: 4px;
+  border: none;
+  height: 56px;
+  padding: auto 12px 12px 12px;
+}
+.custom-item span {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #a7a7a7;
+  padding: 2px 0 0 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #a7a7a7;
+}
+span.field_valid {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #a7a7a7;
+}
+span.field_invalid{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: red;
+  border-top: 1px solid  #f42c4f;
+}
+
+
+.eye {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+}
+.done {
+  position: absolute;
+  right: 44px;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+}
