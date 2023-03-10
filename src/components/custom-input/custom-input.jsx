@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import '../registration/registration.css';
+import '../../pages/registration/registration.css';
 import './custom-input.css';
 
 
@@ -20,7 +20,9 @@ export const CustomInput = React.forwardRef((props, ref) => (
     </label>
 
     {props.errors && <span className='field_invalid'>{props.message}</span>}
+
     {!props.errors && <span className='field_valid'>{props.message}</span>}
+    {props.errors === 'errors.identifier || errors.password' && <span className='field_invalid'/>}
   </div>
 ))
 

@@ -1,12 +1,19 @@
 
 import { createAsyncThunk , createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import Cookies from  'js-cookie';
 
 // import { apiBooks } from '../components/utils';
 
 export const getBooksThunk = createAsyncThunk(
   'books', async ()=> {
-      const booksData = await axios.get('https://strapi.cleverland.by/api/books').then(response => response.data);
+      const booksData = await axios.get('https://strapi.cleverland.by/api/books', {
+        headers: {
+          'Content-Type': 'application/json',
+          // Authorization: `Bearer ${localStorage.getItem('token')}`,
+          
+          Authorization: `Bearer ${Cookies.get('token')}`,
+        }}).then(response => response.data);
 
       return booksData;
   }

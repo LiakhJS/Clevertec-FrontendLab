@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation,useParams  } from 'react-router-dom';
 import classNames from 'classnames';
-
+import Cookies from 'js-cookie';
 import { ReactComponent as Arrow } from '../../images/arrow-down.svg';
 import { getCategoriesThunk } from '../../redux/categories';
 import {   changeBurgerState,
@@ -89,6 +89,9 @@ const location = useLocation();
     dispatch(getCategoriesThunk());
   }, [dispatch]);
 
+  const logOut = () => {
+    Cookies.remove('token');
+};
   return (
     <nav className={classNames('nav-menu mobile', { visible: isBurgerOpened })} data-test-id='burger-navigation'>
       <NavLink to='/books/all' data-test-id={isBurgerOpened ? 'burger-showcase' : 'navigation-showcase'}>
@@ -169,7 +172,7 @@ const location = useLocation();
         <NavLink to=''>
           <div className='nav-menu__profile offer '>Профиль</div>
         </NavLink>
-        <NavLink to=''>
+        <NavLink to='/' onClick={logOut}>
           <div className='nav-menu__exit offer'>Выход</div>
         </NavLink>
       </div>
