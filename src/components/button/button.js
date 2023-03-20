@@ -52,13 +52,14 @@
 
 import './button.css';
 
-export const Button = ({ booking, delivery, isFormOfList, bookPageisActive }) => (
+export const Button = ({  bookCancel,booking, delivery, isFormOfList, bookPageisActive }) => (
   <div className={isFormOfList ? 'btn-wrapper inColumn mobile book-card' : 'btn-wrapper mobile book-card'}>
-    <button type='button' className={ booking
+    <button type='button'  className={ booking || bookCancel
     ? 'reserv-btn reserved' : 
     (delivery  ? 
     'reserv-btn ordered' : 'reserv-btn')}>
-      {bookPageisActive ? 'оценить книгу' : (delivery  || booking ?  'забронирована' : 'забронировать')  }
+    {(bookCancel ? 'отменить бронь': null) ||
+      (bookPageisActive ? 'оценить книгу' : (delivery  || booking ?  'забронирована' : 'забронировать')  )}
     </button>
   </div>
 );

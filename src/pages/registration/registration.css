@@ -23,6 +23,7 @@
   /* height: 492px; */
   background: #ffffff;
   border-radius: 16px;
+  /* display: none; */
 }
 
 .custom-form.result {
@@ -209,4 +210,59 @@ input.reserv-btn {
   width: 600px;
 
   padding: 48px 92px;
+}
+
+.custom-form.result {
+  width: 600px;
+
+  padding: 48px 92px;
+}
+
+@media only all and (max-width: 640px) {
+  .custom-form{
+    width: 288px;
+    padding: 24px 16px;
+    /* height: 482px; */
+  }
+  .cleverland-title {
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 12px;
+    /* identical to box height, or 156% */
+  }
+
+  input.reserv-btn {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    height: 40px;
+  }
+
+
+  .link-to-auth-page {
+    flex-direction: column;
+    gap: 7px;
+  }
+  .custom-item {
+    width: 100%;
+  }
+  .custom-item.result {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .custom-title.result {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .custom-form.result {
+    padding: 42px 16px 32px;
+    gap: 24px;
+    isolation: isolate;
+    width: 288px;
+  }
+  
+  .log-in-question {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }

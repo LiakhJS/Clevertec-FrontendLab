@@ -4,6 +4,14 @@ import { NavLink, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import Cookies from  'js-cookie';
 
+// import { Booking } from '../../components/booking';
+// import { BookEvaluation } from '../../components/book-evaluation';
+// import { Rebooking } from '../../components/rebooking';
+// import { BookRating } from '../../components/book-rating';
+import { Booking } from '../../components/booking';
+// import { BookEvaluation } from '../../components/book-evaluation';
+// import { Booking } from '../../components/calendar';
+// import { CalendarApp } from '../../components/calendar';
 // import Cookies from 'js-cookie';
 import { CustomInput } from '../../components/custom-input';
 import { InputId, InputPlaceholder, InputType } from '../../components/utils.js';
@@ -14,6 +22,9 @@ import { ReactComponent as LogInArrow } from '../../images/log-in-arrow.svg';
 import '../registration/registration.css';
 import './authorization.css';
 import '../../components/button/button.css';
+// import { BookEvaluation } from '../../components/book-evaluation';
+// import { Booking } from '../../components/booking';
+// import { Rebooking } from '../../components/rebooking';
 
 export const Authorization = () => {
 
@@ -76,6 +87,7 @@ const setAuthToken = token => {
 
   return (
     <div className='container__log'>
+<Booking />
       <h3 className='cleverland-title'>Cleverland</h3>
       {!dataIsSent &&
         <form className='custom-form auth' noValidate={true} onSubmit={handleSubmit(onSubmit)}>

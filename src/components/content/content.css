@@ -1,7 +1,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  padding: 62px 0;
+  padding: 47px 0;
   width: 100%;
   margin-left: 6px;
 }
@@ -9,13 +9,13 @@
 @media only all and (max-width: 1280px) {
   .content.mobile {
     margin-left: 0;
-    padding-top: 32px;
+    padding-top: 30px;
   }
 }
 
 @media only all and (max-width: 640px) {
   .content.mobile {
-    padding-top: 8px;
+    padding-top: 11px;
   }
 
   .content.terms,

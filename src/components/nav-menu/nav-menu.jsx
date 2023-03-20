@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useLocation,useParams  } from 'react-router-dom';
 import classNames from 'classnames';
 import Cookies from 'js-cookie';
+
 import { ReactComponent as Arrow } from '../../images/arrow-down.svg';
 import { getCategoriesThunk } from '../../redux/categories';
 import {   changeBurgerState,
@@ -92,6 +93,7 @@ const location = useLocation();
   const logOut = () => {
     Cookies.remove('token');
 };
+
   return (
     <nav className={classNames('nav-menu mobile', { visible: isBurgerOpened })} data-test-id='burger-navigation'>
       <NavLink to='/books/all' data-test-id={isBurgerOpened ? 'burger-showcase' : 'navigation-showcase'}>

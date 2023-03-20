@@ -14,15 +14,41 @@
   fill: #ffffff;
 }
 
+
 .book__card_rating_inline.empty-stars .card_stars > svg path {
   stroke: #ffbc1f;
   color: #ffbc1f;
   fill: #ffffff;
 }
+.your-rate .your-rate_stars .card_stars {
+height: 35px;
 
+  margin: 0;}
+  
+  .your-rate .your-rate_stars .card_stars > svg {
+    width: 33.25px;
+    height: 35px;
+  }
+  
 @media only all and (max-width: 640px) {
   .card_stars.inColumn > svg {
     width: 16px;
     height: 16px;
   }
+  .your-rate .your-rate_stars .card_stars.mobile {
+  height: 36.67px;
+    margin: 0;
+    }
+    
+    .your-rate .your-rate_stars .card_stars > svg {
+      width: 25.33px;
+      height: 26.67px;
+    }
+
+    
 }
+
+
+
+
+
