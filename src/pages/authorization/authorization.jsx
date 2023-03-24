@@ -8,7 +8,7 @@ import Cookies from  'js-cookie';
 // import { BookEvaluation } from '../../components/book-evaluation';
 // import { Rebooking } from '../../components/rebooking';
 // import { BookRating } from '../../components/book-rating';
-import { Booking } from '../../components/booking';
+// import { Booking } from '../../components/booking';
 // import { BookEvaluation } from '../../components/book-evaluation';
 // import { Booking } from '../../components/calendar';
 // import { CalendarApp } from '../../components/calendar';
@@ -87,7 +87,7 @@ const setAuthToken = token => {
 
   return (
     <div className='container__log'>
-<Booking />
+// <Booking />
       <h3 className='cleverland-title'>Cleverland</h3>
       {!dataIsSent &&
         <form className='custom-form auth' noValidate={true} onSubmit={handleSubmit(onSubmit)}>
