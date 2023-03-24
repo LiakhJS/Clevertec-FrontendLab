@@ -1,11 +1,16 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
+import { Booking } from '../../components/booking';
+// import { Booking } from '../../components/booking';
 import { Error } from '../../components/error';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { Loader } from '../../components/loader';
 import { MainContainer } from '../../components/main-container';
+import { setIsOpenedCalendar } from '../../redux/booking';
 import { getBooksThunk } from '../../redux/books';
 import { getCategoriesThunk } from '../../redux/categories';
 import { changeBurgerState, rotateArrow, setIsHiddenGenres } from '../../redux/reducer';
@@ -14,6 +19,7 @@ import './main-page.css';
 
 export const MainPage = () => 
 {
+const navigate = useNavigate();
   const dispatch = useDispatch();
   const hamburger = document.querySelector('.header__main_logo');
   const menu = document.querySelector('.nav-menu');
@@ -36,15 +42,25 @@ export const MainPage = () =>
 
   useEffect(
  () => {
+     if(Cookies.get('token') != null) {
       dispatch(getBooksThunk());
       dispatch(getCategoriesThunk());
       dispatch(setIsHiddenGenres(false));
       dispatch(rotateArrow(false));
+      dispatch(setIsOpenedCalendar(false));
+      
+     } else {
+     navigate('/');
+     }
+       ;
+
     },
     [dispatch]
   );
   
-  
+  const isCalendarOpened = useSelector((state)=> state.booking.isCalendarOpened);
+
+
 
   return (
     <section className='main-page mobile'>
@@ -52,7 +68,7 @@ export const MainPage = () =>
       {booksStatusLoading === 'failed' && <Error />}
       {booksStatusLoading === 'resolved' && (
         <React.Fragment>
-
+{isCalendarOpened === true && <Booking />}
                <Header  />
           <MainContainer  books={booksData} categories={categoriesData} />
           <Footer />

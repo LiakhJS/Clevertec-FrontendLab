@@ -25,5 +25,11 @@
 .field_valid.forgot-pass {
   padding-top: 16px;
 }
+@media only all and (max-width: 640px) {
 
-
+.custom-form.auth{
+  width: 288px;
+  padding: 24px 16px;
+  /* height: 482px; */
+}
+}

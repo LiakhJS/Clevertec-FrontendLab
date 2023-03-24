@@ -2,9 +2,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import { bookSlice } from './book';
+import { bookingSlice } from './booking';
 import { booksSlice } from './books';
 import { categoriesSlice } from './categories';
 import { burgerSlice } from './reducer';
+
 
 // const stringMiddleWare =()=> (next)=>(action)=> {
 //     if(typeof action === 'string') {
@@ -22,7 +24,8 @@ export const store = configureStore({
     burger: burgerSlice.reducer,
     book: bookSlice.reducer,
     books: booksSlice.reducer,
-    categories:categoriesSlice.reducer
+    categories:categoriesSlice.reducer,
+    booking: bookingSlice.reducer,
   },
 
   middleware: (getDefaultMiddleware) =>
