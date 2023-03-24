@@ -109,7 +109,7 @@ const setAuthToken = token => {
  
   return (
     <div className='container__log'>
-
+ {/* <Booking /> */}
       <h3 className='cleverland-title'>Cleverland</h3>
       {!dataIsSent &&
         <form className='custom-form auth' noValidate={true} onSubmit={handleSubmit(onSubmit)}>
