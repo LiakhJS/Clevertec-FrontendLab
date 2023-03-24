@@ -1,0 +1,29 @@
+
+
+.field_invalid-and-restore {
+  display: flex;
+  flex-direction: column;
+}
+.field_invalid-and-restore > span:nth-child(1) {
+  padding-top: 16px;
+}
+
+.field_invalid.restore {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.2px;
+  color: #363636;
+  mix-blend-mode: normal;
+  border-top: none;
+}
+
+.custom-form.auth {
+  width: 528px;
+  /* height: 482px; */
+}
+.field_valid.forgot-pass {
+  padding-top: 16px;
+}
+
+

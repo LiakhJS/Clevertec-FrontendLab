@@ -39,6 +39,23 @@
   color: #363636;
 }
 
+.book-rating__container button, .calendar-app .reserv-btn{
+  height: 52px;
+width: 100%;
+  border-radius: 30px;
+  font-weight: 600;
+font-size: 16px;
+line-height: 150%;
+  
+}
+.calendar-app .btn-wrapper {
+padding: 0;
+width:100%;
+
+}
+
+
+
 @media only all and (max-width: 640px) {
   .btn-wrapper.inColumn.mobile .reserv-btn {
     width: 186px;
@@ -47,6 +64,14 @@
   .btn-wrapper.inColumn.mobile {
     padding: 0;
   }
+  .book-rating__container .btn-wrapper {
+  padding: 12px 0 0 0;}
+  .book-rating__container  button, 
+  .calendar-app .reserv-btn{
+    height: 40px;
+    font-size: 12px;
+line-height: 18px;}
+  
 }
 
 @media only all and (max-width: 480px) {
@@ -58,4 +83,10 @@
   .btn-wrapper.mobile .reserv-btn {
     width: 100%;
   }
+  
+  .calendar-app .reserv-btns .btn-wrapper {
+    padding: 0;
+    width:100%;
+    
+    }
 }

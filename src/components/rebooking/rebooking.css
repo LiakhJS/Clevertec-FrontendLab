@@ -1,0 +1,18 @@
+.reserv-btns {
+display: flex;
+flex-direction: column;
+gap: 16px;
+width:100%;
+}
+.calendar-app.rebooking {
+  width: 528px;
+  height: 580px;
+}
+@media only all and (max-width: 640px) {
+.calendar-app.rebooking {
+  width: 288px;
+  gap: 24px;
+  height: auto;
+  padding: 42px 16px 32px 16px;
+  }
+}

@@ -77,7 +77,7 @@
     "categories": ["Бизнес"],
     "id": 7,
     "booking": null,
-    "delivery": null,
+    "delivery": true,
     "histories": null
   },
   {
@@ -835,7 +835,7 @@
   },
   {
     "issueYear": "2020",
-    "rating": null,
+    "rating": 5,
     "title": "Хочу и буду",
     "authors": ["Михаил Лабковский"],
     "image": { "url": "/uploads/10582784_0_6ba1f42ade.jpg" },

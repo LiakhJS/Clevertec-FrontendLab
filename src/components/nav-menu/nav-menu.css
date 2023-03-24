@@ -12,9 +12,12 @@
   padding: 0px;
   gap: 16px;
   width: 279px;
-  padding-top: 62px;
+  /* padding-top: 62px; */
+  padding: 47px 0;
 }
-
+.navlink.inColumn {
+  min-width: 100%;
+}
 .nav-menu__title,
 .nav-menu__title.nav-menu__genre-sects_g {
   font-weight: 700;

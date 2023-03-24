@@ -70,15 +70,19 @@ input[type='button'] {
   width: 19px;
   height: 19px;
 }
+.forms_form-of-list > svg path, 
+  .forms_form-of-tiles > svg path {
+  stroke: #a7a7a7;
+  color: #a7a7a7;}
 
-svg path,
+/* svg path,
 svg path {
   stroke: #a7a7a7;
   color: #a7a7a7;
-}
+} */
 
-.tiles path,
-.list path {
+.forms_form-of-tiles > .tiles path,
+.forms_form-of-list >.list path {
   stroke: #ffffff;
   color: #ffffff;
   fill: #ffffff;

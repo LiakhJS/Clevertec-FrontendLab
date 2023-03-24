@@ -1,20 +1,78 @@
 
+import { createAsyncThunk , createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import Cookies from  'js-cookie';
 
-import { createSlice } from '@reduxjs/toolkit';
+// import { apiBooks } from '../components/utils';
+
+export const getBooksThunk = createAsyncThunk(
+  'books', async ()=> {
+      const booksData = await axios.get('https://strapi.cleverland.by/api/books', {
+        headers: {
+          'Content-Type': 'application/json',
+          // Authorization: `Bearer ${localStorage.getItem('token')}`,
+          
+          Authorization: `Bearer ${Cookies.get('token')}`,
+        }}).then(response => response.data);
+
+      return booksData;
+  }
+)
+
+const initialState = {
+  books: [],
+  booksByCategory:[],
+  filteredBooks:[],
+  inputValue:'',
+  isSortByDesc:false,
+  isSearchOpened:false,
+  status: 'idle'
+}
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState: {
-    allBooks: [],
-  },
+  initialState,
   reducers: {
-    setAllBooks(state, action) {
-      state.allBooks = action.payload;
+    filterCatalogByCategory: (state, action) => {
+      if (action.payload === 'Все книги') {
+        state.booksByCategory = state.books;
+      } else {
+        state.booksByCategory = state.books.filter((element) => element.categories.includes(action.payload));
+      }
     },
+    setInputValue: (state, action) => {
+      state.inputValue = action.payload;
+    },
+    setSortByDesc: (state, action) => {
+      state.isSortByDesc = action.payload;
+    },
+    setIsSearchOpened: (state, action) => {
+      state.isSearchOpened = action.payload;
+    },
+    
+    
+    
+    
+   
+    
+    
+  },
+  extraReducers: (builder) => {
+      builder.addCase(getBooksThunk.pending, (state) => {
+          state.status = 'loading';
+      });
+      builder.addCase(getBooksThunk.fulfilled, (state, action) => {
+          state.books = action.payload
+          state.status = 'resolved';
+      });
+      builder.addCase(getBooksThunk.rejected, (state) => {
+          state.books = [];
+          state.status = 'failed';
+      })
   }
-})
+});
 
 export { booksSlice };
-export const { setAllBooks } = booksSlice.actions;
+export const {  filterCatalogByCategory, setInputValue, setSortByDesc, setIsSearchOpened } = booksSlice.actions;
 
 
