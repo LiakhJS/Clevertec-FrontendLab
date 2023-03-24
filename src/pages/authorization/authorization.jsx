@@ -109,6 +109,10 @@ const setAuthToken = token => {
  
   return (
     <div className='container__log'>
+jwt,cookies,reset-forgot,logout
+
+
+// <Booking />
 
       <h3 className='cleverland-title'>Cleverland</h3>
       {!dataIsSent &&
