@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { NavLink, useNavigate} from 'react-router-dom';
+// import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Cookies from  'js-cookie';
 
@@ -22,6 +23,7 @@ import { ReactComponent as LogInArrow } from '../../images/log-in-arrow.svg';
 import '../registration/registration.css';
 import './authorization.css';
 import '../../components/button/button.css';
+// import { Booking } from '../../components/booking';
 // import { BookEvaluation } from '../../components/book-evaluation';
 // import { Booking } from '../../components/booking';
 // import { Rebooking } from '../../components/rebooking';
@@ -61,10 +63,16 @@ const setAuthToken = token => {
        // set JWT token to local
       //  localStorage.setItem('token', token);
       Cookies.set('token', token);
+      const currentUser = response.data.user.id;
+ 
+      // set JWT token to local
+     //  localStorage.setItem('token', token);
+     Cookies.set('currentUser', currentUser);
  
        // set token to axios common header
        setAuthToken(token);
        navigate('/books/all');
+       console.log(currentUser)
  
 // redirect user to home page
 
@@ -85,9 +93,27 @@ const setAuthToken = token => {
 
   }
 
+  useEffect(
+    () => {
+   
+        if(Cookies.get('token') != null) {
+          navigate('/books/all');
+         
+        } 
+   
+       },
+       []
+     );
+
+   
+ 
   return (
     <div className='container__log'>
+jwt,cookies,reset-forgot,logout
+
+
 // <Booking />
+
       <h3 className='cleverland-title'>Cleverland</h3>
       {!dataIsSent &&
         <form className='custom-form auth' noValidate={true} onSubmit={handleSubmit(onSubmit)}>

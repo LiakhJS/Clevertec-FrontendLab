@@ -52,9 +52,9 @@
 
 import './button.css';
 
-export const Button = ({  bookCancel,booking, delivery, isFormOfList, bookPageisActive }) => (
+export const Button = ({  bookCancel,booking, delivery, isFormOfList, bookPageisActive, onClick }) => (
   <div className={isFormOfList ? 'btn-wrapper inColumn mobile book-card' : 'btn-wrapper mobile book-card'}>
-    <button type='button'  className={ booking || bookCancel
+    <button type='button'  onClick={onClick} className={ booking || bookCancel
     ? 'reserv-btn reserved' : 
     (delivery  ? 
     'reserv-btn ordered' : 'reserv-btn')}>

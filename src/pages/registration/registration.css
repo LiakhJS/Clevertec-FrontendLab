@@ -219,6 +219,7 @@ input.reserv-btn {
 }
 
 @media only all and (max-width: 640px) {
+  .custom-form,
   .custom-form{
     width: 288px;
     padding: 24px 16px;
