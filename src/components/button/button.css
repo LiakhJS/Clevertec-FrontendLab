@@ -63,6 +63,9 @@ width:100%;
 
   .btn-wrapper.inColumn.mobile {
     padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
   }
   .book-rating__container .btn-wrapper {
   padding: 12px 0 0 0;}
@@ -80,10 +83,11 @@ line-height: 18px;}
   }
   .btn-wrapper.inColumn.mobile  {
   width:100%;}
-  .btn-wrapper.mobile .reserv-btn {
+  .btn-wrapper.mobile .reserv-btn,
+  .btn-wrapper.inColumn.mobile .reserv-btn{
     width: 100%;
   }
-  
+ 
   .calendar-app .reserv-btns .btn-wrapper {
     padding: 0;
     width:100%;
