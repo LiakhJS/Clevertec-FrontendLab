@@ -71,7 +71,8 @@ color:black;}
 }
 
 @media only all and (max-width: 450px) {
-  .card.mobile {
+  .card.mobile,
+  .card-list.mobile a{
     width: 100%;
   }
 }
