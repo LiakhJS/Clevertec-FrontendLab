@@ -82,7 +82,25 @@ export const Booking = () => {
     }
   }
 
+
+  const cancelBookReserv = async () => {
+   
+      
+        instance.delete(`/api/bookings/${currentBookM.booking.id}`)
+        .then((res) => {
+          dispatch(setIsOpenedCalendar(false));
+          dispatch(getBooksThunk(currentBook));
+          console.log(res.data)
+        })
+          .catch((err) => {
+            console.log(err.name)
+          })
+      }
+    
+  
+
   return (
+  
     <div className='container'>
       <div className="calendar-app">
         <div className="rate-cross">
@@ -96,7 +114,11 @@ export const Booking = () => {
         <div className="calendar-container">
           <Calendar onChange={setDate} value={date} />
         </div>
-        <Button onClick={reserveBook} />
+        <div className='reserv-btns'>
+      <Button onClick={reserveBook} rebooking={true} />
+          {currentBookM.booking && <Button bookCancel={true}  onClick={cancelBookReserv}/>}  
+            </div>
+       
       </div>
     </div>
   )

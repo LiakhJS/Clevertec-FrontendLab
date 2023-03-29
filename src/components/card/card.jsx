@@ -1,37 +1,28 @@
-// import { NavLink } from 'react-router-dom';
-
-// import React from 'react';
-
-import { useDispatch  } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
+import Cookies from 'js-cookie';
 import coverEmpty from '../../images/cat.png';
 import { getBookThunk } from '../../redux/book';
 import { setIsOpenedCalendar } from '../../redux/booking';
 import { BookTitle } from '../book-title';
-// import { Booking } from '../booking';
 import { Button } from '../button';
 import { StarRating } from '../star-rating';
+
 import { host } from '../utils';
 
-// import { Dispatch } from 'react';
 import './card.css';
 
-export const Card = ({ isFormOfList, image, authors, title, booking, delivery, rating, highlight,id }) => {
+export const Card = ({ isFormOfList, image, authors, title, rating, highlight, id, bookingCurrentUser, deliveryDate }) => {
   const imageSrc = image ? `${host}${image.url}` : coverEmpty;
-const dispatch = useDispatch();
-
-  // const isCalendarOpened = useSelector((state)=> state.booking.isCalendarOpened);
+  const dispatch = useDispatch();
+  const currentUser = Cookies.get('currentUser');
   const openCalendar = (e) => {
     e.preventDefault();
-    // e.stopPropagation();  
-    dispatch(getBookThunk(Number(id))); 
-dispatch(setIsOpenedCalendar(true));
-
+    dispatch(getBookThunk(Number(id)));
+    dispatch(setIsOpenedCalendar(true));
   }
-
+console.log(bookingCurrentUser);
   return (
     <div className={isFormOfList ? 'card inColumn mobile' : 'card mobile'} data-test-id='card' role='presentation'>
-      {/* <NavLink to={`/book/${category}/${id}`}> */}
       <div className={isFormOfList ? 'card_cover inColumn mobile' : 'card_cover mobile'}>
         <img src={imageSrc} alt='cover-book' />
       </div>
@@ -41,12 +32,11 @@ dispatch(setIsOpenedCalendar(true));
       {isFormOfList ? (
         <div className={isFormOfList ? 'card__rate-and-btn mobile' : 'card__rate-and-btn none mobile'}>
           <StarRating rating={rating} isFormOfList={isFormOfList} />
-          <Button booking={booking} delivery={delivery} isFormOfList={isFormOfList} onClick={openCalendar} />
+          <Button disabled={deliveryDate !== null || (bookingCurrentUser !==  null &&   bookingCurrentUser !== currentUser )? true : false}  booking={bookingCurrentUser} delivery={deliveryDate} isFormOfList={isFormOfList} onClick={openCalendar} />
         </div>
       ) : (
-        <Button booking={booking} delivery={delivery} isFormOfList={isFormOfList} onClick={openCalendar}/>
+        <Button disabled={deliveryDate !== null || (bookingCurrentUser !==  null &&   bookingCurrentUser !== currentUser )? true : false} booking={bookingCurrentUser} delivery={deliveryDate} isFormOfList={isFormOfList} onClick={openCalendar} />
       )}
-      {/* </NavLink> */}
     </div>
   );
 };

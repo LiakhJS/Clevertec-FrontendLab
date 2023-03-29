@@ -24,7 +24,7 @@
   isolation: isolate;
   position: absolute;
   width: 528px;
-  height: 512px;
+  /* height: 512px; */
   background: #ffffff;
   border-radius: 16px;
   position: absolute;
@@ -216,15 +216,34 @@ font-size: 16px;
 line-height: 24px;
 text-transform: lowercase;
 letter-spacing: 0.1px;
-
-
-
 color: #A7A7A7;
 }
 /* .rate-cross__icon {
   width: 24px;
   height: 24px;
 } */
+
+
+
+.reserv-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width:100%;
+  }
+  .calendar-app.rebooking {
+    width: 528px;
+    /* height: 580px; */
+  }
+  @media only all and (max-width: 640px) {
+  .calendar-app.rebooking {
+    width: 288px;
+    gap: 24px;
+    height: auto;
+    padding: 42px 16px 32px 16px;
+    }
+  }
+  
 @media only all and (max-width: 640px) {
 .calendar-app {
 width: 288px;

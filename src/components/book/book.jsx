@@ -42,7 +42,8 @@ export const Book = ({ bookData, bookStatusLoading }) => {
             <div className='book__card_i grid-content'>
               <h3 className=' book__card_i_title '>{bookData.title}</h3>
               <div className=' book__card_i_author  '>{bookData.authors}</div>
-              <Button card={bookData} />
+              <Button  delivery = {bookData.delivery !== null ? bookData.delivery.dateHandedTo : null}
+              booking = {bookData.booking !== null ? bookData.booking.customerId.toString() : null} />
             </div>
             <div className='book__card_about grid-content'>
               <h3>О книге</h3>

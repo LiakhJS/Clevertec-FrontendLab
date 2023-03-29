@@ -6,7 +6,6 @@ import { filterCatalogByCategory } from '../../redux/books';
 import { Card } from '../card/card';
 import { NoBooksFound } from '../no-books-found';
 
-// import { cards } from '../utils';
 import './card-list.css';
 
 export const CardList = ({ categories, isFormOfList }) => {
@@ -17,21 +16,17 @@ export const CardList = ({ categories, isFormOfList }) => {
 
   useEffect(() => {
     const currentCategory = categories.categories.find((categ) => categ.path.toLowerCase() === category);
-    
 
     if (category === 'all') {
       dispatch(filterCatalogByCategory('Все книги'));
     } else if (category) {
       dispatch(filterCatalogByCategory(currentCategory.name));
-
     }
-  }, [category, categories,dispatch]);
+  }, [category, categories, dispatch]);
 
 
   const inputValue = useSelector((state) => state.books.inputValue);
-
   const booksBySearch = booksByCategory.filter((book) => book.title.toLowerCase().includes(inputValue.toLowerCase()));
-
   const booksBySearchAndSort = [...booksBySearch];
   const isSortByDesc = useSelector((state) => state.books.isSortByDesc);
 
@@ -71,7 +66,8 @@ export const CardList = ({ categories, isFormOfList }) => {
         ).path;
 
         return (
-          <NavLink  className={isFormOfList ? 'navlink inColumn ' : null} key={book.id} to={`/book/${bookCategory}/${book.id}`}>
+
+          <NavLink className={isFormOfList ? 'navlink inColumn ' : null} key={book.id} to={`/book/${bookCategory}/${book.id}`}>
             <Card
               isFormOfList={isFormOfList}
               id={book.id}
@@ -81,6 +77,8 @@ export const CardList = ({ categories, isFormOfList }) => {
               booking={book.booking}
               image={book.image}
               delivery={book.delivery}
+              deliveryDate = {book.delivery !== null ? book.delivery.dateHandedTo : null}
+              bookingCurrentUser = {book.booking !== null ? book.booking.customerId.toString() : null}
               category={book.categories}
               rating={book.rating}
               issueYear={book.issueYear}
@@ -90,6 +88,8 @@ export const CardList = ({ categories, isFormOfList }) => {
           </NavLink>
         );
       })}
+
+
     </div>
   );
 };
