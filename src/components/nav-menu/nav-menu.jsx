@@ -47,11 +47,12 @@ export const NavMenu = ({ books }) => {
   const activeCategory = useSelector((state) => state.burger.activeCategory);
 const location = useLocation();
   const { category } = useParams();
-
+useEffect(()=> {
   if(location.pathname ==='/books/all') {
     dispatch(setActiveCategory('all'));
    } 
-   
+},[location.pathname])
+
    booksCategories.forEach((item) => {
     if (item.path === category) {
       dispatch(setActiveCategory(item.path));

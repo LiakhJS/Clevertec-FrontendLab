@@ -25,7 +25,7 @@ export const CardList = ({ categories, isFormOfList }) => {
       dispatch(filterCatalogByCategory(currentCategory.name));
 
     }
-  }, [category, categories, dispatch]);
+  }, [category, categories,dispatch]);
 
 
   const inputValue = useSelector((state) => state.books.inputValue);

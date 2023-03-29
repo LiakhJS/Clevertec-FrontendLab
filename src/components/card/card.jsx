@@ -2,7 +2,7 @@
 
 // import React from 'react';
 
-import { useDispatch , useSelector } from 'react-redux';
+import { useDispatch  } from 'react-redux';
 
 import coverEmpty from '../../images/cat.png';
 import { getBookThunk } from '../../redux/book';
@@ -20,12 +20,13 @@ export const Card = ({ isFormOfList, image, authors, title, booking, delivery, r
   const imageSrc = image ? `${host}${image.url}` : coverEmpty;
 const dispatch = useDispatch();
 
-  const isCalendarOpened = useSelector((state)=> state.booking.isCalendarOpened);
+  // const isCalendarOpened = useSelector((state)=> state.booking.isCalendarOpened);
   const openCalendar = (e) => {
-  e.preventDefault();
-    e.stopPropagation();
-dispatch(setIsOpenedCalendar(!isCalendarOpened));
-  dispatch(getBookThunk(Number(id))); 
+    e.preventDefault();
+    // e.stopPropagation();  
+    dispatch(getBookThunk(Number(id))); 
+dispatch(setIsOpenedCalendar(true));
+
   }
 
   return (
