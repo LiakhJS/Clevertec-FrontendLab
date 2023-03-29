@@ -20,7 +20,7 @@ export const Card = ({ isFormOfList, image, authors, title, rating, highlight, i
     dispatch(getBookThunk(Number(id)));
     dispatch(setIsOpenedCalendar(true));
   }
-console.log(bookingCurrentUser);
+    // first
   return (
     <div className={isFormOfList ? 'card inColumn mobile' : 'card mobile'} data-test-id='card' role='presentation'>
       <div className={isFormOfList ? 'card_cover inColumn mobile' : 'card_cover mobile'}>

@@ -84,7 +84,7 @@ export const Booking = () => {
 
 
   const cancelBookReserv = async () => {
-   
+        // first
       
         instance.delete(`/api/bookings/${currentBookM.booking.id}`)
         .then((res) => {
@@ -118,7 +118,7 @@ export const Booking = () => {
       <Button onClick={reserveBook} rebooking={true} />
           {currentBookM.booking && <Button bookCancel={true}  onClick={cancelBookReserv}/>}  
             </div>
-       
+    
       </div>
     </div>
   )

@@ -24,7 +24,7 @@ export const CardList = ({ categories, isFormOfList }) => {
     }
   }, [category, categories, dispatch]);
 
-
+  // first
   const inputValue = useSelector((state) => state.books.inputValue);
   const booksBySearch = booksByCategory.filter((book) => book.title.toLowerCase().includes(inputValue.toLowerCase()));
   const booksBySearchAndSort = [...booksBySearch];
@@ -92,6 +92,7 @@ export const CardList = ({ categories, isFormOfList }) => {
 
     </div>
   );
+
 };
 
 // const dispatch = useDispatch();
@@ -105,6 +106,6 @@ export const CardList = ({ categories, isFormOfList }) => {
 //       })
 //       .catch((error) => `There is the ${error}`);
 //   };
-
+ 
 //   getUsers();
 // }, [dispatch]);

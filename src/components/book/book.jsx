@@ -26,7 +26,7 @@ export const Book = ({ bookData, bookStatusLoading }) => {
   const currentCategory = booksCategories.find((categ) => categ.path.toLowerCase() === category);
   const isCommentsHidden = useSelector((state) => state.burger.isCommentsHidden);
   const toggleCommentsVisibility = () => (  bookData.comments===null?null :dispatch(changeCommentsVisibility(!isCommentsHidden)));
-
+     // first
   // book.path === category ? 'active' : ''} onClick={() => setActiveCategory(category)} 
   return (
     <div className='book'>

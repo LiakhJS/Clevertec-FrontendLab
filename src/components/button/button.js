@@ -6,7 +6,7 @@ import './button.css';
 export const Button = ({ bookCancel, booking, delivery, isFormOfList, bookPageisActive, onClick, rebooking, disabled}) => {
 
   const currentUser = Cookies.get('currentUser');
-
+  // first
   return (
     <div className={isFormOfList ? 'btn-wrapper inColumn mobile book-card' : 'btn-wrapper mobile book-card'}>
       <button disabled={disabled} type='button' onClick={onClick} className={(bookPageisActive || rebooking ? 'reserv-btn' : (booking === currentUser || bookCancel
