@@ -1,3 +1,37 @@
+* {
+  font-family: 'Montserrat';
+  font-style: normal;
+}
+
+.container {
+  position: fixed;
+  z-index: 8;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(54, 54, 54, 0.3);
+  backdrop-filter: blur(10px);
+}
+.book-rating  {
+flex-basis: content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px;
+  gap: 32px;
+  isolation: isolate;
+  position: absolute;
+  width: 528px;
+  /* height: 508px; */
+  background: #ffffff;
+  border-radius: 16px;
+
+}
+
 .book-rating__container {
 
   display: flex;
@@ -127,6 +161,14 @@ stroke:#F83600;
 
 
 @media only all and (max-width: 640px) {
+  .book-rating  {
+    padding: 42px 16px 32px;
+    gap: 24px;
+
+    width: 288px;
+   
+  
+  }
 
   .book-rating__container >h1 {
     font-size: 18px;
@@ -159,3 +201,7 @@ right: 16px;
       height: 15px;
     }
 }
+
+
+
+

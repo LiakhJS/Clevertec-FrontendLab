@@ -51,13 +51,14 @@ useEffect(()=> {
   if(location.pathname ==='/books/all') {
     dispatch(setActiveCategory('all'));
    } 
-},[location.pathname])
-
    booksCategories.forEach((item) => {
     if (item.path === category) {
       dispatch(setActiveCategory(item.path));
     } 
   });
+},[location.pathname])
+
+   
   const checkActiveGenre = () => {
     dispatch(setIsActiveTermsLink(false));
     dispatch(setIsActiveTreatyLink(false));
@@ -172,7 +173,7 @@ useEffect(()=> {
         </div>
       </NavLink>
       <div className='nav-menu__profile-and-exit'>
-        <NavLink to=''>
+        <NavLink to='/users/me'>
           <div className='nav-menu__profile offer '>Профиль</div>
         </NavLink>
         <NavLink to='/' onClick={logOut}>

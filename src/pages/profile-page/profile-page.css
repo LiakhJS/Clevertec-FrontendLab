@@ -1,0 +1,252 @@
+.profile {
+  width: 100%;
+}
+.profile-page {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+.profile__ava {
+  height: 160px;
+  width: 100%;
+  display: flex;
+}
+.profile__ava_picture {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  cursor: pointer;
+}
+.profile__ava_picture > img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
+}
+.profile__ava_input {
+  width: 160px;
+  height: 160px;
+  left: 0px;
+  top: 0px;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+}
+
+.profile__ava_picture:hover .profile__ava_input_back {
+  width: 160px;
+  height: 160px;
+  opacity: 0.8;
+  top: 113px;
+  bottom: 0;
+  background: #363636;
+  position: absolute;
+  clip-path: url;
+  clip-path: circle(50% at 50% -20%);
+}
+.profile__ava_input_back {
+  height: 46px;
+  width: 160px;
+  cursor: pointer;
+  opacity: 0.8;
+  top: 113px;
+  bottom: 0;
+
+  position: absolute;
+}
+.profile__ava_input_icon {
+  height: 46px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile__ava_picture:hover .profile__ava_input_icon svg {
+  width: 31px;
+  display: block;
+}
+.profile__ava_input_icon svg {
+  width: 31px;
+  display: none;
+}
+.profile__ava_input_icon-i path {
+  fill: white;
+}
+.profile__ava_name {
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+  align-items: flex-start;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 64px;
+  padding-left: 30px;
+
+  letter-spacing: 0.2px;
+}
+.custom-form.profile {
+  flex-direction: row;
+  padding: 32px 0 52px 0;
+}
+.profile__data {
+  padding-top: 92px;
+}
+.profile__data > h4 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  /* identical to box height, or 125% */
+
+  letter-spacing: 0.1px;
+}
+.profile__data > span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  letter-spacing: 0.1px;
+
+  /* grey/black 40 */
+
+  color: #a7a7a7;
+}
+.profile__form-block {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 36px;
+}
+.profile-page .custom-item {
+  width: 100%;
+}
+
+.edit-btns {
+  display: flex;
+  column-gap: 30px;
+}
+
+.profile-page input.reserv-btn {
+  width: 255px;
+  padding-left: 0;
+}
+
+@media only all and (max-width: 1280px) {
+  .profile-page footer {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .profile__data {
+    padding-top: 64px;
+  }
+}
+
+@media only all and (max-width: 1080px) {
+  .custom-form.profile {
+    column-gap: 10px;
+  }
+}
+
+@media only all and (max-width: 960px) {
+  .profile-page span.field_valid,
+  .profile-page span.field_invalid {
+    font-size: 11px;
+  }
+}
+@media only all and (max-width: 895px) {
+  .custom-form.profile {
+    flex-direction: column;
+  }
+  .profile__form-block {
+    width: 100%;
+  }
+  .profile-page span.field_valid,
+  .profile-page span.field_invalid {
+    font-size: 12px;
+  }
+}
+
+@media only all and (max-width: 640px) {
+  .edit-btns {
+    flex-direction: column;
+    width: 100%;
+    row-gap: 16px;
+  }
+  .profile-page input.reserv-btn {
+    width: 100%;
+    height: 52px;
+    font-size: 16px;
+  }
+  .profile__ava {
+    display: flex;
+    gap: 24px;
+height:auto;
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile__ava_picture > img {
+    width: 150px;
+    height: 150px;
+   
+  }
+  .profile__ava_picture {
+    width: 150px;
+    height: 150px;
+  }
+  .profile__ava_input {
+    width: 150px;
+    height: 150px;
+  }
+  .profile__ava_picture:hover .profile__ava_input_back {
+    width: 150px;
+    height: 150px;
+    clip-path: circle(50% at 50% -25%);
+  }
+  .profile__ava_input_icon {
+    height: 36px;
+  }
+  .profile__ava_picture:hover .profile__ava_input_icon svg {
+    width: 22px;
+  }
+  .profile__ava_name {
+  align-items:center;
+
+
+    justify-content: center;
+
+
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 36px;
+padding-left: 0;
+ 
+  }
+  .profile__data > h4 {
+
+    font-size: 18px;
+    line-height: 28px;
+
+}
+.profile__data > span {
+
+  font-size: 15px;
+  line-height: 20px;
+
+}
+.custom-form.profile {
+
+  padding: 24px 0 44px 0;
+}
+}
+@media only all and (max-width: 568px) {
+  .profile-page footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .profile__data {
+    padding-top: 42px;
+  }
+}

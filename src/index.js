@@ -15,6 +15,7 @@ import { ThePublicOffer } from './pages/the-public-offer';
 import { store } from './redux';
 
 import './index.css';
+import { ProfilePage } from './pages/profile-page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -33,6 +34,7 @@ root.render(
           <Route path='/public-offer/' element={<ThePublicOffer />} />
           <Route path='/book/:category/:bookId' element={<BookPage />} />
           <Route path='/forgot-pass' element={<ForgotPassword />} />
+          <Route path='/users/me' element={<ProfilePage />} />
 
         </Routes>
       </HashRouter>

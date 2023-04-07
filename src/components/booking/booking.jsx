@@ -11,6 +11,7 @@ import { Button } from '../button';
 
 import '../book-rating/book-rating.css';
 import './booking.css';
+import { getBookThunk } from '../../redux/book';
 
 export const Booking = () => {
   const dispatch = useDispatch();
@@ -53,11 +54,12 @@ export const Booking = () => {
             'book': currentBook.toString(),
             'customer': currentUser.toString()
           }
-        }).then((res) => {
+        }).then(() => {
           dispatch(setIsOpenedCalendar(false));
-          dispatch(getBooksThunk(currentBook));
+          dispatch(getBooksThunk());
+          dispatch(getBookThunk(currentBook));
           dispatch(getCategoriesThunk());
-          console.log(res.data)
+
         })
           .catch((err) => {
             console.log(err.name)
@@ -70,10 +72,11 @@ export const Booking = () => {
             'book': currentBook.toString(),
             'customer': currentUser.toString()
           }
-        }).then((res) => {
+        }).then(() => {
           dispatch(setIsOpenedCalendar(false));
-          dispatch(getBooksThunk(currentBook));
-          console.log(res.data)
+          dispatch(getBooksThunk());
+          dispatch(getBookThunk(currentBook));
+
         })
           .catch((err) => {
             console.log(err.name)
@@ -87,10 +90,11 @@ export const Booking = () => {
         // first
       
         instance.delete(`/api/bookings/${currentBookM.booking.id}`)
-        .then((res) => {
+        .then(()=> {
           dispatch(setIsOpenedCalendar(false));
-          dispatch(getBooksThunk(currentBook));
-          console.log(res.data)
+          dispatch(getBooksThunk());
+          dispatch(getBookThunk(currentBook));
+
         })
           .catch((err) => {
             console.log(err.name)

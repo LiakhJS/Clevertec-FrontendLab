@@ -690,13 +690,24 @@ h5 {
   }
 }
 
-@media only all and (max-width: 865px) {
+@media only all and (max-width: 946px) {
   .book__in-depth_i {
     flex-direction: column;
+    gap:16px;
   }
+  .book__in-depth_i_col > ul li div:first-child {
+
+    width: 280px;
+}}
+
+@media only all and (max-width: 865px) {
+ 
   section.book-page .nav-menu.mobile.visible {
     margin-left: 64px;
   }
+  
+  
+  
 }
 
 @media only all and (max-width: 640px) {
@@ -788,6 +799,14 @@ h5 {
     line-height: 18px;
     letter-spacing: 0.2px;
   }
+  
+  .book__card_rate-btn .btn-wrapper .reserv-btn {
+    height: 40px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
 
   .book__card_rating,
   .book__card_comments_title,
@@ -827,7 +846,7 @@ h5 {
   }
 
   .book__in-depth_i_col > ul li div:first-child {
-    width: 120px;
+    width: 150px;
   }
 
   .book__card_rating_inline.empty-stars {

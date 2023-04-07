@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-
 import { Booking } from '../../components/booking';
-// import { Booking } from '../../components/booking';
 import { Error } from '../../components/error';
 import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
@@ -45,14 +43,13 @@ export const MainPage = () => {
         dispatch(getBooksThunk());
         dispatch(getCategoriesThunk());
         dispatch(setIsHiddenGenres(false));
+        dispatch(changeBurgerState(false));
         dispatch(rotateArrow(false));
         dispatch(setIsOpenedCalendar(false));
-
       } else {
         navigate('/');
       }
       ;
-
     },
     [dispatch]
   );
@@ -64,6 +61,7 @@ export const MainPage = () => {
   return (
     <section className='main-page mobile'>
       {booksStatusLoading === 'loading' && <Loader />}
+      
       {booksStatusLoading === 'failed' && <Error />}
       {booksStatusLoading === 'resolved' && (
         <React.Fragment>
@@ -80,44 +78,4 @@ export const MainPage = () => {
 };
 
 
-  // first
-
-
-
-
-// const thunkFunction = (dispatch) => {
-//   axios
-//     .get('https://strapi.cleverland.by/api/books')
-//     .then((response) => {
-//       dispatch(setAllBooks(response));
-//     })
-//     .catch((error) => document.write(error));
-// };
-
-// useEffect(
-//   () => () => {
-//     store.dispatch(thunkFunction);
-//   },
-//   []
-// );
-
-// const [games, setGames] = useState([]);
-// useEffect(() => {
-//   axios
-//     .get('https://strapi.cleverland.by/api/books')
-//     .then((response) => setGames(response))
-//     .catch((error) => `There is the ${error}`);
-// }, []);
-
-// const functionS = () => {
-//   const boks = store.getState().books.allBooks;
-//   console.log(boks.data[1].image.url);
-// };
-
-// if (!booksStatusLoading || booksStatusLoading === 'failed') {
-//     return <Error />
-// }
-
-// if (booksStatusLoading === 'loading') {
-//     return <Loader />
-// }
+  

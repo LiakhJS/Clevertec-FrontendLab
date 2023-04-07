@@ -38,10 +38,10 @@ export const Registration = () => {
       await axios
               .post(baseUrl, {
                   'email': String(data.email),
-                  'username': data.username,
-                  'password': data.password,
-                  'firstName': data.firstName,
-                  'lastName': data.lastName,
+                  'username': String(data.username),
+                  'password': String(data.password),
+                  'firstName': String(data.firstName),
+                  'lastName': String(data.lastName),
                   'phone':String(data.phone),
               }).then((data) => {
                   console.log(data)                           

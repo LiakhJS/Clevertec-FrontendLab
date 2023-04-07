@@ -1,9 +1,9 @@
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { NavLink, useNavigate} from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 // import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import Cookies from  'js-cookie';
+import Cookies from 'js-cookie';
 
 // import { Booking } from '../../components/booking';
 // import { BookEvaluation } from '../../components/book-evaluation';
@@ -30,7 +30,7 @@ import '../../components/button/button.css';
 
 export const Authorization = () => {
 
-const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const baseUrl = 'https://strapi.cleverland.by/api/auth/local'
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -39,13 +39,13 @@ const navigate=useNavigate();
     setIsPasswordVisible(!isPasswordVisible);
   };
   const [dataIsSent, setDataIsSent] = useState(false);
-const setAuthToken = token => {
-   if (token) {
-       axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-   }
-   else
-       delete axios.defaults.headers.common.Authorization;
-}
+  const setAuthToken = token => {
+    if (token) {
+      axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    }
+    else
+      delete axios.defaults.headers.common.Authorization;
+  }
 
 
   const authRequest = async (data) => {
@@ -58,27 +58,27 @@ const setAuthToken = token => {
       })
       .then((response) => {
         // get token from response
-       const token = response.data.jwt;
- 
-       // set JWT token to local
-      //  localStorage.setItem('token', token);
-      Cookies.set('token', token);
-      const currentUser = response.data.user.id;
- 
-      // set JWT token to local
-     //  localStorage.setItem('token', token);
-     Cookies.set('currentUser', currentUser);
- 
-       // set token to axios common header
-       setAuthToken(token);
-       navigate('/books/all');
-       console.log(currentUser)
- 
-// redirect user to home page
+        const token = response.data.jwt;
 
-     })
-   
-      .catch((error) => error.response.status);
+        // set JWT token to local
+        //  localStorage.setItem('token', token);
+        Cookies.set('token', token);
+        const currentUser = response.data.user.id;
+
+        // set JWT token to local
+        //  localStorage.setItem('token', token);
+        Cookies.set('currentUser', currentUser);
+
+        // set token to axios common header
+        setAuthToken(token);
+        navigate('/books/all');
+        console.log(currentUser)
+
+        // redirect user to home page
+
+      })
+
+      .catch(() => setDataIsSent(true));
 
   };
   const {
@@ -88,25 +88,28 @@ const setAuthToken = token => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    setDataIsSent(true);
+
     authRequest(data);
 
   }
 
   useEffect(
     () => {
-   
-        if(Cookies.get('token') != null) {
-          navigate('/books/all');
-         
-        } 
-   
-       },
-       []
-     );
 
-   
- 
+      if (Cookies.get('token') != null) {
+        navigate('/books/all');
+
+      }
+
+    },
+    []
+  );
+
+const navigateToAuth = ()=> {
+  navigate('/');
+  // window.location.reload();
+}
+
   return (
     <div className='container__log'>
 
@@ -164,10 +167,10 @@ const setAuthToken = token => {
           </div>
         </form>}
       {dataIsSent &&
-        <form className='custom-form auth result' noValidate={true} onSubmit={handleSubmit(onSubmit)}>
+        <form className='custom-form auth result' noValidate={true} >
           <h4 className='custom-title result'>Вход не выполнен</h4>
           <span className='custom-item result'>Что-то пошло не так. Попробуйте ещё раз.</span>
-          <input type='submit' value="повторить" className='reserv-btn' />
+          <input type='submit' value="повторить" className='reserv-btn' onClick={navigateToAuth}/>
         </form>
       }
     </div>

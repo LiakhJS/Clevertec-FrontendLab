@@ -12,7 +12,7 @@ export const BookTitle = ({ text, highlight, isFormOfList }) => {
 
     return parts.map((part) =>
       part.toLowerCase() === higlight.toLowerCase() ? (
-        <span style={{ color: '#e8bb49' }}>{part}</span>
+        <span key={Math.random()} style={{ color: '#e8bb49' }}>{part}</span>
       ) : ( part
       ))
     

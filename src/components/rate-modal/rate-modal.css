@@ -85,8 +85,7 @@
 }
 
 .custom-input:focus ~ .custom-label,
-.custom-input:not(:focus):valid ~ .custom-label,
-.custom-input:not(:focus):disabled ~ .custom-label {
+.custom-input:not(:focus):valid ~ .custom-label {
   top: 0px;
   font-size: 10px;
   font-weight: 500;

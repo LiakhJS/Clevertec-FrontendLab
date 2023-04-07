@@ -65,17 +65,23 @@ header {
   font-size: 14px;
 }
 
-.book-page header.mobile.active-book {
+.book-page header.mobile.active-book,
+.profile-page header.mobile.active-book {
   padding: 0 165px;
   display: flex;
   justify-content: flex-start;
 }
+.profile-page header.mobile.active-book {
+  padding-top: 32px;
+}
 
-.book-page header.mobile.active-book .header__person {
+.book-page header.mobile.active-book .header__person,
+.profile-page header.mobile.active-book .header__person {
   right: 165px;
 }
 
-.book-page header.mobile.active-book .header__title {
+.book-page header.mobile.active-book .header__title,
+.profile-page header.mobile.active-book .header__title {
   position: absolute;
   padding-left: 120px;
 }
@@ -137,6 +143,22 @@ input#hamburger {
   .header__main_name.mobile {
     display: none;
   }
+  .profile-page .header__main_logo,
+  .profile-page .header__person.mobile {
+    display: flex;
+  }
+
+  .profile-page .header__person {
+    line-height: 40px;
+    height: 45px;
+  }
+
+  .profile-page header.mobile.active-book .header__person {
+    right: 64px;
+  }
+  .profile-page .header__main .header__main_logo.mobile {
+    display: none;
+  }
 
   .header__main .header__main_logo.mobile {
     display: flex;
@@ -156,15 +178,22 @@ input#hamburger {
     padding: 32px 0 24px 0;
   }
 
-  .book-page header.mobile.active-book {
+  .book-page header.mobile.active-book,
+  .profile-page header.mobile.active-book {
     padding: 32px 64px 22px 64px;
   }
 
   .header__title.mobile,
-  .book-page header.mobile.active-book .header__title {
+  .book-page header.mobile.active-book .header__title,
+  .profile-page header.mobile.active-book .header__title {
     position: static;
     padding-left: 24px;
     height: 40px;
+  }
+}
+@media only all and (max-width: 640px) {
+  .profile-page .header__person.mobile{
+  display: none;
   }
 }
 
@@ -190,12 +219,14 @@ input#hamburger {
   }
 
   /* header, */
-  .book-page header.mobile.active-book {
+  .book-page header.mobile.active-book,
+  .profile-page header.mobile.active-book {
     padding: 24px 16px;
   }
 
   .header__title.mobile,
   .book-page header.mobile.active-book .header__title,
+  .profile-page header.mobile.active-book .header__title,
   .header__main {
     height: 28px;
   }

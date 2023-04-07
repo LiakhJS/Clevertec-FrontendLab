@@ -7,10 +7,13 @@ import { Footer } from '../../components/footer';
 import { Header } from '../../components/header';
 import { NavMenu } from '../../components/nav-menu';
 import { getBookThunk } from '../../redux/book';
+import { setRateModalIsOpened } from '../../redux/comment';
+import { setIsHiddenGenres } from '../../redux/reducer';
 
 import '../main/main-page.css';
 import '../../components/main-container/main-container.css';
 import './book-page.css';
+// import { getCategoriesThunk } from '../../redux/categories';
 
 export const BookPage = () => {
   const dispatch = useDispatch();
@@ -20,8 +23,11 @@ export const BookPage = () => {
 
   useEffect(() => {
     dispatch(getBookThunk(Number(bookId)));
+    dispatch(setRateModalIsOpened(false));
+    dispatch(setIsHiddenGenres(true));
+    
   }, [bookId, dispatch]); 
-
+ 
 return( 
   <section className='book-page'>
     <Header />
